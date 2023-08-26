@@ -1,5 +1,6 @@
 import React from "react";
 import EditList from "./EditList";
+import styles from './button.module.css'
 
 export default function SingleNotes({
   text,
@@ -16,7 +17,7 @@ export default function SingleNotes({
   if (id == editId) {
     return (
       <div>
-        <EditList text={text} saveEditedNotes={saveEditedNotes} id={id} />
+        <EditList text={text} saveEditedNotes={saveEditedNotes} id={id} editId={editId}/>
       </div>
     );
   } else {
@@ -24,8 +25,8 @@ export default function SingleNotes({
       <div className="note">
         <p>{text}</p>
         <p>{date}</p>
-        <button onClick={() => handleDeleteNotes(id)}>delete</button>
-        <button onClick={() => handleEdit(id)}>Edit</button>
+        <button onClick={() => handleDeleteNotes(id)} className={styles.delete}> <i class="fa-solid fa-trash fa-xs"></i> delete</button>
+        <button onClick={() => handleEdit(id)} className={styles.edit}> <i class="fa-solid fa-pencil fa-sm"></i> Edit</button>
       </div>
     );
   }

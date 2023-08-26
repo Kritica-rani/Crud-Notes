@@ -1,0 +1,33 @@
+
+.btn{
+    background-color: rgb(128, 128, 255);
+    padding: 4px 18px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 8px 12px;
+}
+
+.delete{
+    background-color: rgb(255, 119, 119);
+    padding: 4px 18px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 8px 12px;
+}
+.edit{
+    background-color: rgb(178, 105, 247);
+    padding: 4px 18px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 8px 12px;
+}
+
+.delete:hover{
+    background-color: rgb(255, 28, 28);
+}
+.edit:hover{
+    background-color: rgb(156, 50, 255);
+}
+.btn:hover{
+    background-color: rgb(97, 97, 253);
+}

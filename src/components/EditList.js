@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import "../App.css"
+import styles from "./button.module.css";
 
-export default function EditList({ text, saveEditedNotes, id }) {
+export default function EditList({ text, saveEditedNotes, id ,editId}) {
   const [editedText, setEditedText] = useState(text);
   const handleChange = (e) => {
     const savetext = e.target.value;
@@ -12,7 +14,7 @@ export default function EditList({ text, saveEditedNotes, id }) {
   return (
     <div>
       {" "}
-      <div className="note">
+      <div className={ editId?"editBack":"normal" }>
         <textarea
           rows={8}
           cols={10}
@@ -20,7 +22,7 @@ export default function EditList({ text, saveEditedNotes, id }) {
           placeholder="Edit notes"
           value={editedText}
         />
-        <button onClick={() => handleSaveEditedNotes(id)}>Save</button>
+        <button onClick={() => handleSaveEditedNotes(id)} className={styles.btn}> <i class="fa-solid fa-check fa-sm"></i> Save </button>
       </div>
     </div>
   );
