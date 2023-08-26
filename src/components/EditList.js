@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function EditList({ text, saveEditedNotes, id }) {
+ 
   const [editedText, setEditedText] = useState(text);
   const handleChange = (e) => {
     const savetext = e.target.value;
@@ -12,7 +13,7 @@ export default function EditList({ text, saveEditedNotes, id }) {
   return (
     <div>
       {" "}
-      <div className="note">
+      <div className= 'note' >
         <textarea
           rows={8}
           cols={10}

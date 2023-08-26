@@ -1,18 +1,71 @@
-.container{
+@font-face {
+  font-family: singleNotes;
+  src: url(/Fonts/Gotham-Spotify-Font/Gotham-Bold.otf);
+}
+
+
+
+:root {
+  --background-light: #faf7f2;
+  --background-dark: #1a1a1a;
+  --singleNote-background-light: #e6e7e7;
+  --singleNote-background-dark:  #303434;
+  --text-color-light: #000;
+  --text-color-dark: #fff;
+  --font-family: singleNotes;
+  
+}
+body{
+  margin:0px;
+}
+
+.light {
+  --appWrapper-background : var(--background-light);
+  --singleNote-background: var(--singleNote-background-light);
+  --text-color: var(--text-color-light);
+}
+
+.dark {
+  --appWrapper-background : var(--background-dark);
+
+  --singleNote-background: var(--singleNote-background-dark);
+  --text-color: var(--text-color-dark);
+}
+
+.AppWrapper {
+  
+  width: 100%;
+  height: 100vh; /* Ensure the wrapper takes up the full viewport height */
+  
+  background-color: var(--appWrapper-background); /* Default background color */
+}
+
+
+.container {
   max-width: 1000px;
   margin: auto;
   padding: 0 15px;
 }
-.notes-list{
+
+.notes-list {
   display: grid;
-  grid-gap:1rem;
-  /* grid-template-columns: repeat(4,250px); */
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 10px;
 }
-.note{
-  background-color: rgb(227, 227, 143);
+
+.note {
+  background-color: var(--singleNote-background);
+  color: var(--text-color);
   border-radius: 10px;
   padding: 1rem;
   min-height: 150px;
-  
+  font-family: var(--font-family);
+}
+
+/* FontAwesome Icons */
+.fa-icon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
 }

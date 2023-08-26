@@ -4,6 +4,13 @@ import Search from "./components/Search";
 import NoteList from "./components/NoteList";
 
 export default function App() {
+  //for darkMode and light mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  
+
   const [notes, setNotes] = useState([
     {
       text: "Demo Notes",
@@ -35,7 +42,7 @@ export default function App() {
   };
   const saveEditedNotes = (id, updatedText) => {
     const updatedNotes = notes.map((item) => {
-      if (item.id == id) {
+      if (item.id === id) {
         return { ...item, text: updatedText };
       }
       return item;
@@ -45,10 +52,26 @@ export default function App() {
   };
   console.log("searchText", searchText);
   return (
-    <div className="container">
-      <Header />
-      <Search setSearchText={setsearchText} />
+    <div className={`AppWrapper ${isDarkMode ? 'dark' : 'light'}`}>
+  <div className= {`container ${isDarkMode ? "dark" : "light"}`}>
+    {isDarkMode ? (
+      <i
+        className="far fa-sun"
+        style={{ color: "#ffd43b" }}
+        title="Switch to Light Mode"
+        onClick={toggleMode}
+      ></i>
+    ) : (
+      <i
+        className="fas fa-moon"
+        title="Switch to Dark Mode"
+        onClick={toggleMode}
+      ></i>
+    )}
+
+    <Search setSearchText={setsearchText} />
       <NoteList
+        
         notes={notes.filter((note) =>
           note.text.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
         )}
@@ -58,6 +81,7 @@ export default function App() {
         editId={editId}
         saveEditedNotes={saveEditedNotes}
       />
+    </div>
     </div>
   );
 }
