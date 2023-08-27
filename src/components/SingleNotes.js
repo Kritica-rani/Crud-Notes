@@ -16,9 +16,7 @@ export default function SingleNotes({
   };
   if (id == editId) {
     return (
-      <div>
         <EditList text={text} saveEditedNotes={saveEditedNotes} id={id} editId={editId}/>
-      </div>
     );
   } else {
     return (

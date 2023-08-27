@@ -12,7 +12,7 @@ export default function AddNotes({ handleAddNotes }) {
     setNewTextValue("");
   };
   return (
-    <div className="note">
+    <div className="notee">
       <textarea
         rows={8}
         cols={10}

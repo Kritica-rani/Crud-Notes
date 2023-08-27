@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import NoteList from "./components/NoteList";
-// import "./App.css";
 
 export default function App() {
   const [notes, setNotes] = useState([
@@ -33,7 +32,6 @@ export default function App() {
   };
   const handleEdit = (id) => {
     setEditId(id);
-    console.log(editId);
   };
   const saveEditedNotes = (id, updatedText) => {
     const updatedNotes = notes.map((item) => {
@@ -59,7 +57,6 @@ export default function App() {
         handleEdit={handleEdit}
         editId={editId}
         saveEditedNotes={saveEditedNotes}
-        // className={ editId?"editBack":"normal" }
       />
     </div>
   );

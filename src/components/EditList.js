@@ -12,18 +12,19 @@ export default function EditList({ text, saveEditedNotes, id ,editId}) {
     saveEditedNotes(id, editedText);
   };
   return (
-    <div>
+    <>
       {" "}
-      <div className={ editId?"editBack":"normal" }>
+      <div className={ editId?"editBack":"note" }>
         <textarea
           rows={8}
           cols={10}
           onChange={(e) => handleChange(e)}
           placeholder="Edit notes"
           value={editedText}
+          className="editText"
         />
         <button onClick={() => handleSaveEditedNotes(id)} className={styles.btn}> <i class="fa-solid fa-check fa-sm"></i> Save </button>
       </div>
-    </div>
+    </>
   );
 }
