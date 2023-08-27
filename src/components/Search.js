@@ -7,6 +7,7 @@ export default function Search({ setSearchText }) {
         type="text"
         placeholder="Search Notes..."
         onChange={(e) => setSearchText(e.target.value)}
+        className="inputSearch"
       />
     </div>
   );
