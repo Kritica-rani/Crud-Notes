@@ -8,7 +8,7 @@ export default function App() {
     {
       text: "Demo Notes",
       date: "13/07/23",
-      id: Math.random(),
+      id: Math.floor(Math.random()*(10000-1)+1),
     },
   ]);
   const [searchText, setsearchText] = useState("");
@@ -17,7 +17,7 @@ export default function App() {
     //logic to update state with new text value
     const date = new Date();
     const newNote = {
-      id: Math.random(),
+      id: Math.floor(Math.random()*100000),
       date: date.toLocaleDateString(),
       text: text,
     };
