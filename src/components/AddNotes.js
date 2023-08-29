@@ -10,6 +10,7 @@ export default function AddNotes({ handleAddNotes }) {
   const handleSaveNotes = () => {
     handleAddNotes(newTextValue);
     setNewTextValue("");
+    console.log("checking");
   };
   return (
     <div className="notee">
